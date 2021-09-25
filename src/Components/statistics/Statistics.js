@@ -1,21 +1,30 @@
+import PropTypes from 'prop-types';
+import style from './Statistics.module.css';
 import React from 'react';
 
-const Statistic = ({ title = 'Upload Stats', statistic }) => {
+const Statistic = ({ title, statistic }) => {
   return (
-    <>
-      <h2>{title}</h2>
-      <ul>
+    <div className={style.Statistics}>
+      <h2 className={title ? style.Title : !style.Title}>{title}</h2>
+      <ul className={style.List}>
         {statistic.map(start => {
           return (
-            <li key={start.id}>
-              <span>{start.label}</span>
-              <span>{start.percentage}</span>
+            <li key={start.id} className={style.Item}>
+              <span className={style.Label}>{start.label}</span>
+              <span className={style.Percentage}>{start.percentage}</span>
             </li>
           );
         })}
       </ul>
-    </>
+    </div>
   );
+};
+
+Statistic.propTypes = {
+  title: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  percentage: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default Statistic;

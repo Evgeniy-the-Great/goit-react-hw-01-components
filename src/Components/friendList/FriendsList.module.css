@@ -1,0 +1,34 @@
+.List {
+  display: block;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  margin-left: auto;
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.Online {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 15px;
+}
+
+.Offline {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: 15px;
+}

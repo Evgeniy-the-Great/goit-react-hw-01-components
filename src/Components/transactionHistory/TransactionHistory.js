@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import style from './TransactionHistory.module.css';
 
 const TransactionHistory = ({ transactions }) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
+    <table className={style.TransactionHistory}>
+      <thead className={style.Label}>
+        <tr className={style.Row}>
+          <th className={style.Colom}>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
@@ -24,6 +26,13 @@ const TransactionHistory = ({ transactions }) => {
       </tbody>
     </table>
   );
+};
+
+TransactionHistory.propTypes = {
+  id: PropTypes.number.isRequired,
+  amount: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
 };
 
 export default TransactionHistory;

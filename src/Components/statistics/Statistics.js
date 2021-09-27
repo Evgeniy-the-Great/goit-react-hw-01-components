@@ -5,7 +5,7 @@ import React from 'react';
 const Statistic = ({ title, statistic }) => {
   return (
     <div className={style.Statistics}>
-      <h2 className={title ? style.Title : !style.Title}>{title}</h2>
+      {title && <h2 className={style.Title}>{title}</h2>}
       <ul className={style.List}>
         {statistic.map(start => {
           return (
@@ -22,9 +22,11 @@ const Statistic = ({ title, statistic }) => {
 
 Statistic.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.number.isRequired,
-  percentage: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,
+  statistic: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    percentage: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
 };
 
 export default Statistic;

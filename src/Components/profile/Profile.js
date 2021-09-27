@@ -2,23 +2,18 @@ import PropTypes from 'prop-types';
 import style from './Profile.module.css';
 import React from 'react';
 
-const Profile = ({ user }) => {
+const Profile = ({ avatar, name, tag, location, stats }) => {
   return (
     <div className={style.Profile}>
       <div className={style.Description}>
-        <img
-          src={user.avatar}
-          alt={user.name}
-          width="200"
-          className={style.Avatar}
-        />
-        <p className={style.Name}>{user.name}</p>
-        <p className={style.Tag}>@{user.tag}</p>
-        <p className={style.Location}>{user.location}</p>
+        <img src={avatar} alt={name} width="200" className={style.Avatar} />
+        <p className={style.Name}>{name}</p>
+        <p className={style.Tag}>@{tag}</p>
+        <p className={style.Location}>{location}</p>
       </div>
 
       <ul className={style.Stats}>
-        {Object.entries(user.stats).map(stats => {
+        {Object.entries(stats).map(stats => {
           return (
             <li key={stats[0]} className={style.Item}>
               <span className={style.Label}>{stats[0]} </span>
@@ -36,7 +31,7 @@ Profile.propTypes = {
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  // stats: PropTypes.shape(),
+  stats: PropTypes.object.isRequired,
 };
 
 export default Profile;

@@ -3,13 +3,12 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  margin-left: auto;
 }
 
 .Item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #fff;
   width: 300px;
   margin-bottom: 20px;

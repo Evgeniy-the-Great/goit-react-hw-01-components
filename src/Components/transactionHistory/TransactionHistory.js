@@ -29,10 +29,12 @@ const TransactionHistory = ({ transactions }) => {
 };
 
 TransactionHistory.propTypes = {
-  id: PropTypes.number.isRequired,
-  amount: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
+  transactions: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    amount: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  }),
 };
 
 export default TransactionHistory;
